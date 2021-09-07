@@ -29,7 +29,7 @@ jobs:
     - name: Check out Git repository
       uses: actions/checkout@v2
     - name: Configure
-      run: cmake -DBUILD_SHARED_LIBS=OFF -DSOUNDTOUCH_DLL=ON -DSOUNDSTRETCH=ON -DCMAKE_INSTALL_PREFIX=${{ matrix.install_dir }} ${{ matrix.cmake_extras }} -S . -B build
+      run: cmake -DBUILD_SHARED_LIBS=ON -DSOUNDTOUCH_DLL=ON -DSOUNDSTRETCH=ON -DCMAKE_INSTALL_PREFIX=${{ matrix.install_dir }} ${{ matrix.cmake_extras }} -S . -B build
     - name: Build
       run: cmake --build build ${{ matrix.cmake_config }}
       env:
